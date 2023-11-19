@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
     agent any
 
     stages {
@@ -49,6 +49,17 @@ pipeline {
                         error "dotnet no encontrado. Asegúrate de tener .NET SDK instalado."
                     }
                 }
+            }
+        }
+    }
+}*/
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
             }
         }
     }
