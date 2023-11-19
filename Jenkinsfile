@@ -1,4 +1,4 @@
-/*pipeline {
+pipeline {
     agent any
 
     stages {
@@ -8,7 +8,7 @@
                 git 'https://github.com/fvalderramag/NET.git'
             }
         }
-
+/*
         stage('Restore and Build') {
             steps {
                 // Restaurar paquetes y compilar el proyecto
@@ -50,9 +50,11 @@
                     }
                 }
             }
-        }
+        }*/
     }
-}*/
+}
+
+/*
 pipeline {
     agent any
 
@@ -63,5 +65,5 @@ pipeline {
             }
         }
     }
-}
+}*/
 
