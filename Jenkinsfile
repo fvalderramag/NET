@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Clonar el repositorio desde Git
-                git 'https://github.com/fvalderramag/NET.git'
+                git url: 'https://github.com/fvalderramag/NET.git'          
             }
         }
 /*
