@@ -19,7 +19,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh """
-                    ls -l                     
+                    ls -l 
+                    dotnet build MiAppHolaMundo.csproj                  
                 """
                 
             }
