@@ -18,15 +18,14 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'dotnet build ${workspace}'
+                bat """
+                    ls -l                     
+                """
+                
             }
         }
 
-        stage('Deploy') {
-            steps {
-                bat 'dotnet run ${workspace}'
-            }
-        }
+       
 /*
         stage('Restore and Build') {
             steps {
