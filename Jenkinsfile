@@ -8,7 +8,7 @@ pipeline {
                 //git url: 'https://github.com/fvalderramag/NET.git'   
 
                  // The below will clone your repo and will be checked out to master branch by default.
-           git credentialsId: '', url: 'https://github.com/fvalderramag/NET.git'
+           git branch: 'main', credentialsId: 'd0076696-0b12-4e01-b5a9-09ef7adc434b', url: 'https://github.com/fvalderramag/NET.git'
            // Do a ls -lart to view all the files are cloned. It will be clonned. This is just for you to be sure about it.
            sh "ls -lart ./*" 
            // List all branches in your repo. 
