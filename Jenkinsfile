@@ -16,6 +16,18 @@ pipeline {
             }
         }
 
+        stage('Build') {
+            steps {
+                bat 'dotnet build ${workspace}'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                bat 'dotnet run ${workspace}'
+            }
+        }
+/*
         stage('Restore and Build') {
             steps {
                 // Restaurar paquetes y compilar el proyecto
@@ -57,7 +69,7 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
     }
 }
 
