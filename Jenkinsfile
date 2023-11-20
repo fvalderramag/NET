@@ -19,10 +19,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh  """            
-                    dotnet --list-sdks
-                """
-
-      
+                    dotnet build MiAppHolaMundo.csproj                    
+                """ 
                 
             }
         }
