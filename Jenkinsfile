@@ -18,11 +18,11 @@ pipeline {
 
         stage('Build') {
             steps {
-               // bat """                    
-                //    dotnet build MiAppHolaMundo.csproj                  
-                //"""
+                sh  """            
+                    dotnet --list-sdks
+                """
 
-                bat """echo %COMPUTERNAME%"""
+      
                 
             }
         }
