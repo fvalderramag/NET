@@ -18,17 +18,22 @@ pipeline {
 
         stage('Build') {
             steps {
-               /* sh  """   
+            /* 
+                sh  """   
                     dotnet restore "MiAppHolaMundo.csproj"
                     dotnet build "MiAppHolaMundo.csproj" -c Release -o /app/build
                     dotnet publish "MiAppHolaMundo.csproj" -c Release -o /app/publish
                     cd /app/publish
                     dotnet MiAppHolaMundo.dll           
-                """ 
-                */
+                """   
+                
                 sh  """
                     dotnet --list-sdks
                     dotnet --list-runtimes
+                """ 
+            */
+                sh  """
+                    dotnet run
                 """ 
 
             }
