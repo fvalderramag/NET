@@ -1,6 +1,14 @@
 pipeline {
     agent any
-    stages {
+    stages {       
+
+        stage ('Git Checkout') {
+            steps {
+                git branch: 'main', credentialsId: '935adb9b-3c07-462f-a498-c26ac7386514', url: 'https://github.com/fvalderramag/NET.git'
+            }
+        }
+
+    /*
         stage('Checkout') {
             steps {  
                  // The below will clone your repo and will be checked out to master branch by default.
@@ -13,12 +21,11 @@ pipeline {
                 sh "git checkout main"
             }
         }
+     */   
         stage('Test') {
             steps {
-                sh  'dotnet run' 
-                           
-               
-
+                sh(script: "dotnet run", returnStdout: true)
+                /*sh  'dotnet run'  */
             }
         }
        
