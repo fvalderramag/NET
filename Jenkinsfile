@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh  'dotnet build' 
+                sh  'dotnet run' 
                            
                
 
