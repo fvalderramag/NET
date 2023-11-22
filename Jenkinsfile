@@ -13,11 +13,11 @@ pipeline {
                 sh "git checkout main"
             }
         }
-        stage('Build') {
+        stage('Test') {
             steps {
-                sh  """   
-                    dotnet run holaMundo.csproj         
-                """ 
+                sh  'dotnet test' 
+                           
+               
 
             }
         }
