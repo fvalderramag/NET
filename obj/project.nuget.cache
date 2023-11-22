@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ANaD3kqW82xzONOBXR923pSj9deFBA/l2Vob7y0GWrl+kAEfhDaDy7RhEDoXrusyYR+VkChxC8TczgfRM9uGZg==",
+  "dgSpecHash": "jZOlJfVrTPMAYV5hBvSilGFQRD6cFAlaZ6hzJCW/ot75hikzk0oiU13Aoi2gQwox3iG4NZBWpZCHo6lbxDdfwQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fernando\\MiAppHolaMundo\\MiAppHolaMundo.csproj",
+  "projectFilePath": "/home/fvalderramag/holaMundo/holaMundo.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
