@@ -31,7 +31,7 @@ stage('Pack') {
    }
 stage('Publish') {
       steps {
-           bat "dotnet nuget push **\\nupkgs\\*.nupkg -s https://fvg.jfrog.io/artifactory/api/nuget/simpleappfvg -username fvalderramag@gmail.com -password cmVmdGtuOjAxOjE3MzIzODM0NDc6V0FhU0V2SDZDNFI5ZnRicW00d2tqcmM4NU1m" 
+           bat "dotnet nuget push **\\nupkgs\\*.nupkg --api-key cmVmdGtuOjAxOjE3MzIzODM0NDc6V0FhU0V2SDZDNFI5ZnRicW00d2tqcmM4NU1m --source https://fvg.jfrog.io/artifactory/api/nuget/simpleappfvg" 
        }
    }
  }
