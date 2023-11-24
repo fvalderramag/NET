@@ -6,7 +6,7 @@ dotnet = 'path\\to\\dotnet.exe'
 stages {
 stage ('Checkout') {
             steps {
-                 git credentialsId: 'userId', url: 'https://github.com/NeelBhatt/SampleCliApp',branch: 'master'
+                 git credentialsId: 'userId', url: 'hhttps://github.com/fvalderramag/NET.git',branch: 'main'
             }
 }
 stage ('Restore PACKAGES') {     
@@ -31,7 +31,7 @@ stage('Pack') {
    }
 stage('Publish') {
       steps {
-           bat "dotnet nuget push **\\nupkgs\\*.nupkg -k yourApiKey -s http://myserver/artifactory/api/nuget/nuget-internal-stable/com/sample"
+           bat "dotnet nuget push **\\nupkgs\\*.nupkg -k yourApiKey -s https://fvg.jfrog.io/artifactory/api/nuget/net-nuget" 
        }
    }
  }
