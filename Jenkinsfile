@@ -31,7 +31,7 @@ stage('Pack') {
    }
 stage('Publish') {
       steps {
-           bat "dotnet nuget push **\\nupkgs\\*.nupkg -k yourApiKey -s https://fvg.jfrog.io/artifactory/api/nuget/v3/net-nuget"            
+           bat "dotnet nuget push **\\nupkgs\\*.nupkg -k cmVmdGtuOjAxOjE3MzIzODE0ODU6SjZkemNMQjZpMlpJYnpGSHUzdmlnNkVkYkFm -s https://fvg.jfrog.io/artifactory/api/nuget/v3/net-nuget"            
        }
    }
  }
