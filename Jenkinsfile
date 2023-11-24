@@ -31,7 +31,8 @@ stage('Pack') {
    }
 stage('Publish') {
       steps {
-           bat "dotnet nuget push **\\nupkgs\\*.nupkg --api-key cmVmdGtuOjAxOjE3MzIzODM0NDc6V0FhU0V2SDZDNFI5ZnRicW00d2tqcmM4NU1m --source https://fvg.jfrog.io/artifactory/api/nuget/simpleappfvg" 
+           bat "dotnet nuget push **\\nupkgs\\*.nupkg --api-key oy2borm2nud6j2n7afaauss3n4ojcjduxmos6zwbqbt64y --source https://api.nuget.org/v3/index.json" 
+           //dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://api.nuget.org/v3/index.json
        }
    }
  }
