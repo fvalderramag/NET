@@ -1,75 +1,38 @@
 pipeline {
-    agent any
-    stages {       
-
-        stage ('Git Checkout') {
+agent any
+environment {
+dotnet = 'path\\to\\dotnet.exe'
+}
+stages {
+stage ('Checkout') {
             steps {
-                git branch: 'main', credentialsId: '935adb9b-3c07-462f-a498-c26ac7386514', url: 'https://github.com/fvalderramag/NET.git'
+                 git credentialsId: 'userId', url: 'https://github.com/NeelBhatt/SampleCliApp',branch: 'master'
             }
+}
+stage ('Restore PACKAGES') {     
+         steps {
+             bat "dotnet restore --configfile NuGet.Config"
+          }
         }
-
-    /*
-        stage('Checkout') {
-            steps {  
-                 // The below will clone your repo and will be checked out to master branch by default.
-                git branch: 'main', credentialsId: '935adb9b-3c07-462f-a498-c26ac7386514', url: 'https://github.com/fvalderramag/NET.git'
-                // Do a ls -lart to view all the files are cloned. It will be clonned. This is just for you to be sure about it.
-                sh "ls -lart ./*" 
-                // List all branches in your repo. 
-                sh "git branch -a"
-                // Checkout to a specific branch in your repo.
-                sh "git checkout main"
-            }
-        }
-     */   
-        stage('Test') {
-            steps {
-                sh(script: "dotnet run", returnStdout: true)
-                /*sh  'dotnet run'  */
-            }
-        }
-       
-    /*
-        stage('Restore and Build') {
-            steps {
-                // Restaurar paquetes y compilar el proyecto
-                script {
-                    def dotnetCmd = sh(script: 'which dotnet', returnStatus: true).trim()
-                    if (dotnetCmd == 0) {
-                        sh 'dotnet restore'
-                        sh 'dotnet build'
-                    } else {
-                        error "dotnet no encontrado. Asegúrate de tener .NET SDK instalado."
-                    }
-                }
-            }
-        }
-        stage('Test') {
-            steps {
-                // Ejecutar pruebas
-                script {
-                    def dotnetCmd = sh(script: 'which dotnet', returnStatus: true).trim()
-                    if (dotnetCmd == 0) {
-                        sh 'dotnet test'
-                    } else {
-                        error "dotnet no encontrado. Asegúrate de tener .NET SDK instalado."
-                    }
-                }
-            }
-        }
-        stage('Publish') {
-            steps {
-                // Publicar la aplicación
-                script {
-                    def dotnetCmd = sh(script: 'which dotnet', returnStatus: true).trim()
-                    if (dotnetCmd == 0) {
-                        sh 'dotnet publish -c Release -o ./publish'
-                    } else {
-                        error "dotnet no encontrado. Asegúrate de tener .NET SDK instalado."
-                    }
-                }
-            }
-        }
-    */
+stage('Clean') {
+      steps {
+            bat 'dotnet clean'
+       }
     }
+stage('Build') {
+     steps {
+            bat 'dotnet build --configuration Release'
+      }
+   }
+stage('Pack') {
+     steps {
+           bat 'dotnet pack --no-build --output nupkgs'
+      }
+   }
+stage('Publish') {
+      steps {
+           bat "dotnet nuget push **\\nupkgs\\*.nupkg -k yourApiKey -s http://myserver/artifactory/api/nuget/nuget-internal-stable/com/sample"
+       }
+   }
+ }
 }
