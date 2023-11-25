@@ -36,7 +36,7 @@ stage('Publish') {
            bat'''
                cd nupkgs
                dir
-               dotnet nuget push sample.1.0.0.nupkg --api-key oy2borm2nud6j2n7afaauss3n4ojcjduxmos6zwbqbt64y --source https://api.nuget.org/v3/index.json    
+               dotnet nuget push sample.1.0.0.nupkg --api-key oy2hl3n7i6ixwybtyxla6hdg6jtm27vubpqlaw7vnr3dv4 --source https://api.nuget.org/v3/index.json    
            '''           
        }
    }
