@@ -33,7 +33,7 @@ stage('Publish') {
       steps {
            //bat "dotnet nuget push **\\nupkgs\\*.nupkg -k oy2borm2nud6j2n7afaauss3n4ojcjduxmos6zwbqbt64y -s https://api.nuget.org/v3/index.json" 
            bat '''
-               cd \\nupkgs
+               cd /nupkgs/
                dir
            '''
            bat "dotnet nuget push sample.1.0.0.nupkg -k oy2borm2nud6j2n7afaauss3n4ojcjduxmos6zwbqbt64y -s https://api.nuget.org/v3/index.json"    
