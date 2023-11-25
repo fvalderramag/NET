@@ -32,7 +32,7 @@ stage('Pack') {
 stage('Publish') {
       steps {
            //bat "dotnet nuget push **\\nupkgs\\*.nupkg -k oy2borm2nud6j2n7afaauss3n4ojcjduxmos6zwbqbt64y -s https://api.nuget.org/v3/index.json" 
-           bat "pwd"
+           sh "pwd"
            bat "dotnet nuget push appone.1.0.0.nupkg -k oy2borm2nud6j2n7afaauss3n4ojcjduxmos6zwbqbt64y -s https://api.nuget.org/v3/index.json"    
            //dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://api.nuget.org/v3/index.json
        }
