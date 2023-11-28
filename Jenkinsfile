@@ -33,11 +33,7 @@ stage('Publish') {
       steps {           
            echo "${WORKSPACE}"
            //bat " dotnet nuget push ${WORKSPACE}\\nupkgs\\fvgprojectone.1.0.0.nupkg --api-key oy2hl3n7i6ixwybtyxla6hdg6jtm27vubpqlaw7vnr3dv4 --source https://api.nuget.org/v3/index.json --skip-duplicate"                         
-           bat "dotnet nuget push ${WORKSPACE}\\nupkgs\\fvgprojectone.1.0.0.nupkg -k cmVmdGtuOjAxOjE3MzI3NDYzMjM6Y0VWdEZWeHhJakJpUFdkZ0hZMWp2YTFjM09s -s https://fvg.jfrog.io/artifactory/api/nuget/v3/net-nuget-local/index.json" 
-}
- 
-}
-
+           bat "dotnet nuget push ${WORKSPACE}\\nupkgs\\fvgprojectone.1.0.0.nupkg -k cmVmdGtuOjAxOjE3MzI3NDYzMjM6Y0VWdEZWeHhJakJpUFdkZ0hZMWp2YTFjM09s -s http://myserver/artifactory/api/nuget/nuget-internal-stable/com/sample"
        }
    }
  }
